@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SignSense - Home</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Welcome to SignSense</h1>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <button id="liveButton" class="btn btn-outline-light my-2">Live</button>
+      <button id="learnButton" style="display: none;" class="btn btn-outline-light my-2">Learn</button>
+      <h2>Camera Stream</h2>
+      <div id="cameraFeedContainer" style="display: none;">
+        <img id="cameraFeed" src="">
+      </div>
+    </main>
+
+    <footer>
+      <div>
+        <button id="reviewButton">Leave a Review</button>
+      </div>
+      <div>
+        <button onclick="window.location.href='{{ url_for('reset_email') }}'" class="btn btn-outline-light">Reset Email</button>
+        <button onclick="window.location.href='{{ url_for('update_password') }}'" class="btn btn-outline-light">Reset Password</button>
+        <button id="reviewModalButton" data-bs-toggle="modal" data-bs-target="#reviewModal">Review</button>
+      </div>
+      <div>
+        <button onclick="window.location.href='{{ url_for('logout') }}'" class="btn btn-outline-light"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</button>
+      </div>
+    </footer>
+
+    <div id="flash-message">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category,message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+          
+        {% endif %}
+      {% endwith %}
+    </div>
+
+    <script>
+      
+      const cameraFeed = document.getElementById('cameraFeed');
+      const cameraFeedContainer = document.getElementById('cameraFeedContainer');
+      const liveButton = document.getElementById('liveButton');
+      const learnButton = document.getElementById('learnButton');
+
+      // Function to set camera feed source based on button clicked
+      function setCameraFeedSource(source) {
+        cameraFeed.src = source;
+      }
+
+      liveButton.addEventListener('click', () => {
+        cameraFeedContainer.style.display = 'block';
+        // Set initial source based on which button was last clicked
+        if (liveButton.classList.contains('active')) {
+          setCameraFeedSource("{{ url_for('video_feed') }}");
+        } 
+        liveButton.style.display = 'block';
+        learnButton.style.display = 'none';
+      });
+
+     learnButton.addEventListener('click', () => {
+        cameraFeedContainer.style.display = 'block';
+        // Set initial source based on which button was last clicked
+        if (learnButton.classList.contains('active')) {
+          setCameraFeedSource("{{ url_for('learn_feed') }}");
+        } 
+        learnButton.style.display = 'block';
+      });
+ 
+      // Event listeners for Live and Learn buttons
+      liveButton.addEventListener('click', () => {
+        liveButton.classList.add('active');
+        learnButton.classList.remove('active');
+        // Set camera feed source to 'Live' feed
+        setCameraFeedSource("{{ url_for('video_feed') }}");
+      });
+
+      learnButton.addEventListener('click', () => {
+        learnButton.classList.add('active');
+        liveButton.classList.remove('active');
+        // Set camera feed source to 'Learn' feed
+        setCameraFeedSource("{{ url_for('learn_feed') }}");
+      });
+    </script>
+  </div>
+</body>
+</html>

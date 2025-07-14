@@ -1,0 +1,130 @@
+.sign {
+    margin-bottom: 30px;
+}
+
+.signin {
+    margin-left: 540px;
+}
+
+form {
+    margin-left: 540px;
+}
+
+.form1 {
+    margin-top: 30px;
+}
+
+.input {
+    border-radius: 20px;
+    width: 250px;
+    height: 25px;
+    margin-top: -10px;
+    padding-left: 6px;
+}
+
+.next {
+    width: 250px;
+    border-radius: 20px;
+    height: 25px;
+    color: white;
+    background-color: rgb(31, 31, 231);
+    border: none;
+}
+
+.next:hover {
+    transition-duration: 0.5s;
+    background-color: rgb(5, 5, 117);
+}
+
+.a2 {
+    cursor: pointer;
+    margin-left: 610px;
+    color: white;
+    font-size: 20px;
+}
+
+.line {
+    width: 90px;
+    background: rgb(189, 178, 178);
+    height: 1px;
+    margin-left: 550px;
+    display: inline-block;
+}
+
+h3 {
+    display: inline-block;
+}
+
+.line2 {
+    width: 100px;
+    background: rgb(189, 178, 178);
+    height: 1px;
+    margin-left: 550px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.btn {
+    width: 255px;
+    border-radius: 20px;
+    height: 35px;
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    margin-left: 545px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: white;
+    background-color: black;
+    transition-duration: 0.5s;
+}
+
+a {
+    text-decoration: none;
+}
+
+.under {
+    margin-top: 100px;
+}
+
+
+
+.li1 {
+    font-size: 25px;
+}
+
+nav {
+    height: 50px;
+
+}
+
+.under {
+    color: aliceblue;
+    margin-top: 70px;
+    margin-left: 80px;
+    position: fixed;
+}
+
+.darshit1 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    animation: DRR;
+    animation-duration: 3s;
+}
+
+b {
+    margin-left: 650px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.first {
+    width: 230px;
+    height: 180px;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SignSense</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i|PT+Serif:700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+</head>
+<body class="is-boxed has-animations">
+    <div class="body-wrap boxed-container">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+                            <a href="#">
+                                <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <title>SignSense</title>
+                                    <defs>
+                                        <radialGradient cy="0%" fx="50%" fy="0%" r="100%" id="logo-gradient">
+                                            <stop stop-color="#FFF" offset="0%"/>
+                                            <stop stop-color="#FFF" stop-opacity=".24" offset="100%"/>
+                                        </radialGradient>
+                                    </defs>
+                                    <path d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16zm0-10a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" fill="url(#logo-gradient)" fill-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </h1>
+                    </div>
+                    <ul class="header-links list-reset m-0">
+                        <li>
+                            <a href="{{url_for('login')}}">Login</a>
+                        </li>
+                        <li>
+                            <a class="button button-sm button-shadow" href="{{ url_for('register')}}">Signup</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero text-light text-center">
+                <div class="container-sm">
+                    <div class="hero-inner">
+                        <h1 >SignSense</h1>
+                        <p>
+                            Sign Language Translator
+                        </p>
+
+                        <a href="{{url_for('login')}}">Get Started</a>
+
+                        
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+           
+    <script src="dist/js/main.min.js"></script>
+</body>
+</html>
